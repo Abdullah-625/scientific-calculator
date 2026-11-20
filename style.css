@@ -1,0 +1,283 @@
+
+/* ================================
+   1. GENERAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #10131c;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ================================
+   2. CALCULATOR CONTAINER
+================================ */
+
+.calculator {
+    width: 100%;
+    max-width: 520px;
+    background: #1a1f2b;
+    padding: 24px;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* ================================
+   3. HEADER
+================================ */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    font-size: 24px;
+}
+
+.header p {
+    color: #929bad;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.history-btn {
+    background: #30394b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ================================
+   4. DISPLAY
+================================ */
+
+.display {
+    background: #111722;
+    padding: 20px;
+    border-radius: 12px;
+    min-height: 115px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.display-top {
+    display: flex;
+    justify-content: space-between;
+    color: #929bad;
+    font-size: 13px;
+}
+
+#mode {
+    color: #53d6a0;
+}
+
+#display {
+    text-align: right;
+    font-size: clamp(28px, 8vw, 38px);
+    font-weight: bold;
+    margin-top: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* ================================
+   5. MODE BUTTONS
+================================ */
+
+.mode-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 9px;
+    margin-bottom: 12px;
+}
+
+.mode-btn {
+    background: #30394b;
+    color: #d9e0ec;
+    border: none;
+    padding: 12px 5px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ================================
+   6. CALCULATOR BUTTONS
+================================ */
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 9px;
+}
+
+.buttons button {
+    min-width: 0;
+    min-height: 53px;
+    border: none;
+    border-radius: 10px;
+    background: #293142;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.buttons button:hover {
+    background: #3b465b;
+}
+
+.buttons button:active {
+    transform: scale(0.94);
+}
+
+/* Scientific buttons */
+.buttons button:nth-child(-n+15) {
+    color: #63d9b0;
+    background: #253b3a;
+}
+
+/* Operators */
+.buttons .operator {
+    background: #35445f;
+    color: #8eb7ff;
+    font-size: 20px;
+}
+
+/* Equals */
+.buttons .equals {
+    background: #4a8cda;
+    color: white;
+    font-size: 23px;
+    grid-column: span 1;
+}
+
+/* ================================
+   7. HISTORY
+================================ */
+
+.history-panel {
+    background: #111722;
+    padding: 15px;
+    margin-top: 18px;
+    border-radius: 10px;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+.history-heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.history-heading button {
+    background: none;
+    border: none;
+    color: #ff7777;
+    cursor: pointer;
+}
+
+.history-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #30394b;
+    color: #c5cedd;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.history-item strong {
+    display: block;
+    color: #63d9b0;
+    margin-top: 5px;
+}
+
+.empty-history {
+    color: #929bad;
+    font-size: 13px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ================================
+   8. FOOTER
+================================ */
+
+footer {
+    text-align: center;
+    color: #707b8f;
+    font-size: 11px;
+    margin-top: 22px;
+}
+
+/* ================================
+   9. MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 10px;
+        align-items: flex-start;
+    }
+
+    .calculator {
+        padding: 16px;
+        margin-top: 10px;
+        border-radius: 15px;
+    }
+
+    .header h1 {
+        font-size: 21px;
+    }
+
+    .buttons {
+        gap: 7px;
+    }
+
+    .buttons button {
+        min-height: 48px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    .mode-row {
+        gap: 7px;
+    }
+
+    #display {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 350px) {
+    .calculator {
+        padding: 10px;
+    }
+
+    .buttons {
+        gap: 5px;
+    }
+
+    .buttons button {
+        min-height: 43px;
+        font-size: 12px;
+    }
+}
