@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="calculator">
+
+        <header class="header">
+            <div>
+                <h1>Calculator</h1>
+                <p>Scientific Calculator</p>
+            </div>
+            <button id="history-toggle" class="history-btn">History</button>
+        </header>
+
+        <section class="display">
+            <div class="display-top">
+                <span id="mode">DEG</span>
+                <span id="previous"></span>
+            </div>
+
+            <div id="display">0</div>
+        </section>
+
+        <div class="mode-row">
+            <button id="angle-mode" class="mode-btn">DEG</button>
+            <button id="second" class="mode-btn">2nd</button>
+            <button class="mode-btn" data-action="clear">AC</button>
+            <button class="mode-btn" data-action="delete">DEL</button>
+        </div>
+
+        <section class="buttons">
+
+            <!-- Scientific functions -->
+            <button data-fn="sin">sin</button>
+            <button data-fn="cos">cos</button>
+            <button data-fn="tan">tan</button>
+            <button data-fn="log">log</button>
+            <button data-fn="ln">ln</button>
+
+            <button data-fn="asin">sin⁻¹</button>
+            <button data-fn="acos">cos⁻¹</button>
+            <button data-fn="atan">tan⁻¹</button>
+            <button data-fn="sqrt">√</button>
+            <button data-fn="square">x²</button>
+
+            <button data-value="(">(</button>
+            <button data-value=")">)</button>
+            <button data-value="^">xʸ</button>
+            <button data-value="!">n!</button>
+            <button data-value="%">%</button>
+
+            <!-- Numbers and operators -->
+            <button data-value="7">7</button>
+            <button data-value="8">8</button>
+            <button data-value="9">9</button>
+            <button class="operator" data-value="/">÷</button>
+            <button data-value="pi">π</button>
+
+            <button data-value="4">4</button>
+            <button data-value="5">5</button>
+            <button data-value="6">6</button>
+            <button class="operator" data-value="*">×</button>
+            <button data-value="e">e</button>
+
+            <button data-value="1">1</button>
+            <button data-value="2">2</button>
+            <button data-value="3">3</button>
+            <button class="operator" data-value="-">−</button>
+            <button data-value="ans">Ans</button>
+
+            <button data-value="0">0</button>
+            <button data-value=".">.</button>
+            <button class="operator" data-value="+">+</button>
+            <button class="equals" data-action="calculate">=</button>
+            <button data-action="clear">C</button>
+
+        </section>
+
+        <section id="history-panel" class="history-panel hidden">
+            <div class="history-heading">
+                <h3>History</h3>
+                <button id="clear-history">Clear</button>
+            </div>
+            <div id="history-list">
+                <p class="empty-history">No calculations yet</p>
+            </div>
+        </section>
+
+        <footer>
+            Scientific Calculator · Made with HTML, CSS & JS
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
